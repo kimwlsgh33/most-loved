@@ -1,6 +1,6 @@
 # Leveraging the pre-built Docker images with
 # cargo-chef and the Rust toolchain
-FROM lukemathwalker/cargo-chef:latest-rust-1.65.0 AS chef
+FROM lukemathwalker/cargo-chef:latest-rust-1.72.0 AS chef
 WORKDIR /app
 
 FROM chef AS planner
@@ -13,8 +13,6 @@ COPY --from=planner /app/recipe.json recipe.json
 RUN cargo chef cook --recipe-path recipe.json
 
 COPY . .
-RUN cargo build
-
-FROM rust:1.65-slim AS template-rust
-COPY --from=builder /app/target/debug/template-rust /usr/local/bin
-ENTRYPOINT ["/usr/local/bin/template-rust"]
+RUN cargo build --release
+COPY --from=builder /app/target/release/quotes /usr/local/bin
+ENTRYPOINT ["/usr/local/bin/quotes"]
