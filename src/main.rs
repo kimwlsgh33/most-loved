@@ -1,5 +1,6 @@
-use axum::http;
+mod handlers;
 use axum::routing::{get, Router};
+use handlers::health;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -14,8 +15,4 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .unwrap();
 
     Ok(())
-}
-
-async fn health() -> http::StatusCode {
-    http::StatusCode::OK
 }
