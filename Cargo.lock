@@ -97,7 +97,7 @@ dependencies = [
  "percent-encoding",
  "pin-project-lite",
  "rustversion",
- "serde 1.0.188",
+ "serde",
  "serde_json",
  "serde_path_to_error",
  "serde_urlencoded",
@@ -164,7 +164,7 @@ version = "2.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b4682ae6287fcf752ecaabbfcc7b6f9b72aa33933dc23a554d853aea8eea8635"
 dependencies = [
- "serde 1.0.188",
+ "serde",
 ]
 
 [[package]]
@@ -217,7 +217,10 @@ checksum = "7f2c685bad3eb3d45a01354cedb7d5faa66194d1d58ba6e267a8de788f79db38"
 dependencies = [
  "android-tzdata",
  "iana-time-zone",
+ "js-sys",
  "num-traits",
+ "serde",
+ "wasm-bindgen",
  "windows-targets",
 ]
 
@@ -321,7 +324,7 @@ version = "1.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a26ae43d7bcc3b814de94796a5e736d4029efb0ee900c12e2d54c993ad1a1e07"
 dependencies = [
- "serde 1.0.188",
+ "serde",
 ]
 
 [[package]]
@@ -1008,11 +1011,12 @@ name = "quotes"
 version = "0.1.0"
 dependencies = [
  "axum",
- "serde 1.0.188",
+ "chrono",
+ "serde",
  "serde_json",
  "sqlx",
  "tokio",
- "uuid 0.4.0",
+ "uuid",
 ]
 
 [[package]]
@@ -1170,12 +1174,6 @@ dependencies = [
 
 [[package]]
 name = "serde"
-version = "0.9.15"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "34b623917345a631dc9608d5194cc206b3fe6c3554cd1c75b937e55e285254af"
-
-[[package]]
-name = "serde"
 version = "1.0.188"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cf9e0fcba69a370eed61bcf2b728575f726b50b55cba78064753d708ddc7549e"
@@ -1202,7 +1200,7 @@ checksum = "6b420ce6e3d8bd882e9b243c6eed35dbc9a6110c9769e74b584e0d68d1f20c65"
 dependencies = [
  "itoa",
  "ryu",
- "serde 1.0.188",
+ "serde",
 ]
 
 [[package]]
@@ -1212,7 +1210,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4beec8bce849d58d06238cb50db2e1c417cfeafa4c63f692b15c82b7c80f8335"
 dependencies = [
  "itoa",
- "serde 1.0.188",
+ "serde",
 ]
 
 [[package]]
@@ -1224,7 +1222,7 @@ dependencies = [
  "form_urlencoded",
  "itoa",
  "ryu",
- "serde 1.0.188",
+ "serde",
 ]
 
 [[package]]
@@ -1383,7 +1381,7 @@ dependencies = [
  "percent-encoding",
  "rustls",
  "rustls-pemfile",
- "serde 1.0.188",
+ "serde",
  "serde_json",
  "sha2",
  "smallvec",
@@ -1393,7 +1391,7 @@ dependencies = [
  "tokio-stream",
  "tracing",
  "url",
- "uuid 1.4.1",
+ "uuid",
  "webpki-roots",
 ]
 
@@ -1423,7 +1421,7 @@ dependencies = [
  "once_cell",
  "proc-macro2",
  "quote",
- "serde 1.0.188",
+ "serde",
  "serde_json",
  "sha2",
  "sqlx-core",
@@ -1468,7 +1466,7 @@ dependencies = [
  "percent-encoding",
  "rand",
  "rsa",
- "serde 1.0.188",
+ "serde",
  "sha1",
  "sha2",
  "smallvec",
@@ -1476,7 +1474,7 @@ dependencies = [
  "stringprep",
  "thiserror",
  "tracing",
- "uuid 1.4.1",
+ "uuid",
  "whoami",
 ]
 
@@ -1508,7 +1506,7 @@ dependencies = [
  "memchr",
  "once_cell",
  "rand",
- "serde 1.0.188",
+ "serde",
  "serde_json",
  "sha1",
  "sha2",
@@ -1517,7 +1515,7 @@ dependencies = [
  "stringprep",
  "thiserror",
  "tracing",
- "uuid 1.4.1",
+ "uuid",
  "whoami",
 ]
 
@@ -1538,11 +1536,11 @@ dependencies = [
  "libsqlite3-sys",
  "log",
  "percent-encoding",
- "serde 1.0.188",
+ "serde",
  "sqlx-core",
  "tracing",
  "url",
- "uuid 1.4.1",
+ "uuid",
 ]
 
 [[package]]
@@ -1804,18 +1802,13 @@ dependencies = [
 
 [[package]]
 name = "uuid"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7cfec50b0842181ba6e713151b72f4ec84a6a7e2c9c8a8a3ffc37bb1cd16b231"
-dependencies = [
- "serde 0.9.15",
-]
-
-[[package]]
-name = "uuid"
 version = "1.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "79daa5ed5740825c40b389c5e50312b9c86df53fccd33f281df655642b43869d"
+dependencies = [
+ "getrandom",
+ "serde",
+]
 
 [[package]]
 name = "vcpkg"
